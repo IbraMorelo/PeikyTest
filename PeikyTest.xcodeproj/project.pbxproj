@@ -3,23 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FA5E135239065D8005072CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA5E134239065D8005072CE /* AppDelegate.swift */; };
-		8FA5E137239065D8005072CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA5E136239065D8005072CE /* SceneDelegate.swift */; };
-		8FA5E139239065D8005072CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA5E138239065D8005072CE /* ViewController.swift */; };
+		883EC7217CA916BF1162B40D /* Pods_PeikyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BFB2634269871DFBACE7EE /* Pods_PeikyTest.framework */; };
+		8F14BA91239075610088DEC0 /* PeikyTestCoordinatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14BA8B239075600088DEC0 /* PeikyTestCoordinatorPresenter.swift */; };
+		8F14BA92239075610088DEC0 /* PeikyTestCoordinatorWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14BA8C239075600088DEC0 /* PeikyTestCoordinatorWireframe.swift */; };
+		8F14BA93239075610088DEC0 /* PeikyTestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14BA8D239075600088DEC0 /* PeikyTestCoordinator.swift */; };
+		8F14BA94239075610088DEC0 /* PeikyTestCoordinatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F14BA8E239075600088DEC0 /* PeikyTestCoordinatorViewController.xib */; };
+		8F14BA95239075610088DEC0 /* PeikyTestCoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14BA8F239075610088DEC0 /* PeikyTestCoordinatorViewController.swift */; };
+		8F14BA96239075610088DEC0 /* AppDelegate+Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14BA90239075610088DEC0 /* AppDelegate+Window.swift */; };
+		8F14BA99239075990088DEC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14BA97239075990088DEC0 /* AppDelegate.swift */; };
+		8F14BA9A239075990088DEC0 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14BA98239075990088DEC0 /* AppConfiguration.swift */; };
 		8FA5E13C239065D8005072CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA5E13A239065D8005072CE /* Main.storyboard */; };
 		8FA5E13E239065D9005072CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FA5E13D239065D9005072CE /* Assets.xcassets */; };
 		8FA5E141239065D9005072CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA5E13F239065D9005072CE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0741EA927634E1823162C269 /* Pods-PeikyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeikyTest.release.xcconfig"; path = "Target Support Files/Pods-PeikyTest/Pods-PeikyTest.release.xcconfig"; sourceTree = "<group>"; };
+		453A57327215EA2BD3890B2F /* Pods-PeikyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeikyTest.debug.xcconfig"; path = "Target Support Files/Pods-PeikyTest/Pods-PeikyTest.debug.xcconfig"; sourceTree = "<group>"; };
+		61BFB2634269871DFBACE7EE /* Pods_PeikyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeikyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F14BA8B239075600088DEC0 /* PeikyTestCoordinatorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeikyTestCoordinatorPresenter.swift; sourceTree = "<group>"; };
+		8F14BA8C239075600088DEC0 /* PeikyTestCoordinatorWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeikyTestCoordinatorWireframe.swift; sourceTree = "<group>"; };
+		8F14BA8D239075600088DEC0 /* PeikyTestCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeikyTestCoordinator.swift; sourceTree = "<group>"; };
+		8F14BA8E239075600088DEC0 /* PeikyTestCoordinatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeikyTestCoordinatorViewController.xib; sourceTree = "<group>"; };
+		8F14BA8F239075610088DEC0 /* PeikyTestCoordinatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeikyTestCoordinatorViewController.swift; sourceTree = "<group>"; };
+		8F14BA90239075610088DEC0 /* AppDelegate+Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Window.swift"; sourceTree = "<group>"; };
+		8F14BA97239075990088DEC0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8F14BA98239075990088DEC0 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		8FA5E131239065D8005072CE /* PeikyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeikyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FA5E134239065D8005072CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8FA5E136239065D8005072CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8FA5E138239065D8005072CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8FA5E13B239065D8005072CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FA5E13D239065D9005072CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FA5E140239065D9005072CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883EC7217CA916BF1162B40D /* Pods_PeikyTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424487B0DB993F25D8EDD667 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				453A57327215EA2BD3890B2F /* Pods-PeikyTest.debug.xcconfig */,
+				0741EA927634E1823162C269 /* Pods-PeikyTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8FA5E128239065D7005072CE = {
 			isa = PBXGroup;
 			children = (
 				8FA5E133239065D8005072CE /* PeikyTest */,
 				8FA5E132239065D8005072CE /* Products */,
+				424487B0DB993F25D8EDD667 /* Pods */,
+				D1EAE8250EB9C536C4CE0AFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +82,28 @@
 		8FA5E133239065D8005072CE /* PeikyTest */ = {
 			isa = PBXGroup;
 			children = (
-				8FA5E134239065D8005072CE /* AppDelegate.swift */,
-				8FA5E136239065D8005072CE /* SceneDelegate.swift */,
-				8FA5E138239065D8005072CE /* ViewController.swift */,
+				8F14BA98239075990088DEC0 /* AppConfiguration.swift */,
+				8F14BA97239075990088DEC0 /* AppDelegate.swift */,
+				8F14BA90239075610088DEC0 /* AppDelegate+Window.swift */,
+				8F14BA8D239075600088DEC0 /* PeikyTestCoordinator.swift */,
+				8F14BA8B239075600088DEC0 /* PeikyTestCoordinatorPresenter.swift */,
+				8F14BA8F239075610088DEC0 /* PeikyTestCoordinatorViewController.swift */,
+				8F14BA8E239075600088DEC0 /* PeikyTestCoordinatorViewController.xib */,
+				8F14BA8C239075600088DEC0 /* PeikyTestCoordinatorWireframe.swift */,
 				8FA5E13A239065D8005072CE /* Main.storyboard */,
 				8FA5E13D239065D9005072CE /* Assets.xcassets */,
 				8FA5E13F239065D9005072CE /* LaunchScreen.storyboard */,
 				8FA5E142239065D9005072CE /* Info.plist */,
 			);
 			path = PeikyTest;
+			sourceTree = "<group>";
+		};
+		D1EAE8250EB9C536C4CE0AFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61BFB2634269871DFBACE7EE /* Pods_PeikyTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FA5E145239065D9005072CE /* Build configuration list for PBXNativeTarget "PeikyTest" */;
 			buildPhases = (
+				281F266FAFC4FDF30D1877D5 /* [CP] Check Pods Manifest.lock */,
 				8FA5E12D239065D8005072CE /* Sources */,
 				8FA5E12E239065D8005072CE /* Frameworks */,
 				8FA5E12F239065D8005072CE /* Resources */,
+				DB1CC4D38BD063326F584EFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,20 +168,67 @@
 			files = (
 				8FA5E141239065D9005072CE /* LaunchScreen.storyboard in Resources */,
 				8FA5E13E239065D9005072CE /* Assets.xcassets in Resources */,
+				8F14BA94239075610088DEC0 /* PeikyTestCoordinatorViewController.xib in Resources */,
 				8FA5E13C239065D8005072CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		281F266FAFC4FDF30D1877D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PeikyTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB1CC4D38BD063326F584EFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PeikyTest/Pods-PeikyTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PeikyTest/Pods-PeikyTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PeikyTest/Pods-PeikyTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8FA5E12D239065D8005072CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA5E139239065D8005072CE /* ViewController.swift in Sources */,
-				8FA5E135239065D8005072CE /* AppDelegate.swift in Sources */,
-				8FA5E137239065D8005072CE /* SceneDelegate.swift in Sources */,
+				8F14BA93239075610088DEC0 /* PeikyTestCoordinator.swift in Sources */,
+				8F14BA92239075610088DEC0 /* PeikyTestCoordinatorWireframe.swift in Sources */,
+				8F14BA9A239075990088DEC0 /* AppConfiguration.swift in Sources */,
+				8F14BA91239075610088DEC0 /* PeikyTestCoordinatorPresenter.swift in Sources */,
+				8F14BA96239075610088DEC0 /* AppDelegate+Window.swift in Sources */,
+				8F14BA99239075990088DEC0 /* AppDelegate.swift in Sources */,
+				8F14BA95239075610088DEC0 /* PeikyTestCoordinatorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +370,12 @@
 		};
 		8FA5E146239065D9005072CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 453A57327215EA2BD3890B2F /* Pods-PeikyTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PeikyTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,10 +389,12 @@
 		};
 		8FA5E147239065D9005072CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0741EA927634E1823162C269 /* Pods-PeikyTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PeikyTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

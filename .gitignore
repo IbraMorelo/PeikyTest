@@ -1,0 +1,48 @@
+
+.DS_Store
+*/.DS_Store
+*.DS_Store
+*Breakpoints_v2.xcbkptlist
+*/Breakpoints_v2.xcbkptlist
+PeikyTest/.DS_Store
+# User specific files
+PeikyTest/PeikyTest.xcodeproj/xcshareddata/xcschemes/*
+PeikyTest/PeikyTest.xcworkspace/xcuserdata/*
+PeikyTest/Pods/Pods.xcodeproj/xcuserdata/*
+*/UserInterfaceState.xcuserstate
+
+#Pods
+Pods/
+**/Pods
+*/Pods/
+*/Podfile.lock
+Podfile.lock
+
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+*.orig
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+## Aditional 
+*/xcschememanagement.plist
+xcuserdata/
+DerivedData
+
+PeikyTest/.idea/.name
+PeikyTest/.idea/PeikyTest.iml
+PeikyTest/.idea/misc.xml
+PeikyTest/.idea/modules.xml
+PeikyTest/.idea/workspace.xml
+PeikyTest/.idea/xcode.xml
+PeikyTest/.idea/inspectionProfiles/profiles_settings.xml
+PeikyTest/.idea/inspectionProfiles/Project_Default.xml
+PeikyTest/.idea/runConfigurations/PeikyTest.xml
+PeikyTest/nrdSYM.zip
+DerivedData
