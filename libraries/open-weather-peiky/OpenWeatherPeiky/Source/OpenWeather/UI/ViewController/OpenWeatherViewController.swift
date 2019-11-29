@@ -11,7 +11,6 @@ enum TypeOfSearch: Int {
 }
 
 protocol OpenWeatherViewOutput {
-    func didLoad()
     func requestWeatherCity(name: String,
                             completionHandler: @escaping (_ openWeatherDetail: OpenWeatherDetail) -> Void,
                             onError: @escaping () -> Void)
@@ -36,6 +35,7 @@ final class OpenWeatherViewController: UIViewController {
     @IBOutlet private weak var searchBtn: UIButton! {
         didSet {
             searchBtn.backgroundColor = #colorLiteral(red: 0, green: 0.534819901, blue: 0.9057584405, alpha: 1)
+            searchBtn.setTitle("Buscar", for: .normal)
             searchBtn.setTitleColor(.white, for: .normal)
             searchBtn.layer.cornerRadius = searchBtn.frame.height / 2
         }
@@ -45,6 +45,7 @@ final class OpenWeatherViewController: UIViewController {
     private var presenter: OpenWeatherViewOutput
     private var typeOfSearch: TypeOfSearch = .city
     private var openWeatherDetail: [OpenWeatherDetail] = []
+    private let heightCell: CGFloat = 50.0
     
     init(presenter: OpenWeatherViewOutput) {
         self.presenter = presenter
@@ -57,7 +58,6 @@ final class OpenWeatherViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        presenter.didLoad()
         setupCollection()
     }
 }
@@ -87,16 +87,16 @@ extension OpenWeatherViewController {
         case .city:
             presenter.requestWeatherCity(name: fieldCity.text ?? "", completionHandler: { [weak self] data in
                 self?.addNewItem(data)
-            }, onError: {
-                
+            }, onError: { [weak self] in
+                self?.showAlertError()
             })
         case .location:
             presenter.requestWeatherLocation(lat: fieldLocationLat.text ?? "",
                                              lon: fieldLocationLon.text ?? "",
                                              completionHandler: { [weak self] data in
                                                 self?.addNewItem(data)
-            }, onError: {
-                
+            }, onError: { [weak self] in
+                self?.showAlertError()
             })
         }
     }
@@ -120,6 +120,11 @@ extension OpenWeatherViewController {
         collectionView.reloadData()
     }
     
+    func showAlertError() {
+        let alert = UIAlertController(title: "Datos no encontrados", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
 }
 
 extension OpenWeatherViewController: UICollectionViewDataSource {
@@ -146,8 +151,7 @@ extension OpenWeatherViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
-        let height: CGFloat = 50.0
-        return CGSize(width: width, height: height)
+        return CGSize(width: width, height: heightCell)
     }
 
     func collectionView(_ collectionView: UICollectionView,

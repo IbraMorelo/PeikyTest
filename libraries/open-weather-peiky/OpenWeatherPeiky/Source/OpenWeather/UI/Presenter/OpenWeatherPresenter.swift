@@ -20,10 +20,6 @@ final class OpenWeatherPresenter {
 }
 
 extension OpenWeatherPresenter: OpenWeatherPresenterProtocol {
-    func didLoad() {
-//        interactor.requestWeather()
-    }
-    
     func showOpenWeather() {
         wireframe.showOpenWeather(with: self)
     }
