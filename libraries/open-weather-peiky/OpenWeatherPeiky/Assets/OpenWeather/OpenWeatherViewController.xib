@@ -33,6 +33,7 @@
                     <segments>
                         <segment title="First"/>
                         <segment title="Second"/>
+                        <segment title=""/>
                     </segments>
                     <connections>
                         <action selector="typeOfSearchChanged:" destination="-1" eventType="valueChanged" id="PAj-RV-1QX"/>

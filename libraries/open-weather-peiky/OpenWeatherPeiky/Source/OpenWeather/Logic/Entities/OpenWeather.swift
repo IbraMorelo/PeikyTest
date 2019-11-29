@@ -7,6 +7,7 @@
 
 struct OpenWeatherDetail: Decodable {
     var weather: [OpenWeather]
+    var name: String
 }
 
 struct OpenWeather: Decodable {

@@ -5,9 +5,12 @@
 //  Created by Ibrahimme Morelo on 28/11/2019.
 //
 
+import CoreLocation
+
 enum TypeOfSearch: Int {
     case city
     case location
+    case current
 }
 
 protocol OpenWeatherViewOutput {
@@ -26,6 +29,7 @@ final class OpenWeatherViewController: UIViewController {
         didSet {
             typeOfSearchControl.setTitle("Ciudad", forSegmentAt: 0)
             typeOfSearchControl.setTitle("Localización", forSegmentAt: 1)
+            typeOfSearchControl.setTitle("Actual", forSegmentAt: 2)
         }
     }
     @IBOutlet private weak var fieldCity: UITextField!
@@ -46,6 +50,7 @@ final class OpenWeatherViewController: UIViewController {
     private var typeOfSearch: TypeOfSearch = .city
     private var openWeatherDetail: [OpenWeatherDetail] = []
     private let heightCell: CGFloat = 50.0
+    private let locationManager = CLLocationManager()
     
     init(presenter: OpenWeatherViewOutput) {
         self.presenter = presenter
@@ -59,25 +64,29 @@ final class OpenWeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         setupCollection()
+        locationManager.delegate = self
     }
 }
 
 extension OpenWeatherViewController {
     @IBAction func typeOfSearchChanged(_ sender: Any) {
+        resetFields()
         switch TypeOfSearch(rawValue: typeOfSearchControl.selectedSegmentIndex)
         {
         case .city:
             fieldCity.isHidden = false
             stackviewLocation.isHidden = true
-            fieldLocationLat.text = ""
-            fieldLocationLon.text = ""
             typeOfSearch = .city
         case .location:
             fieldCity.isHidden = true
-            fieldCity.text = ""
             stackviewLocation.isHidden = false
             typeOfSearch = .location
-        default:
+        case .current:
+            getCurrentLocation()
+            fieldCity.isHidden = true
+            stackviewLocation.isHidden = false
+            typeOfSearch = .current
+        case .none:
             break
         }
     }
@@ -90,14 +99,8 @@ extension OpenWeatherViewController {
             }, onError: { [weak self] in
                 self?.showAlertError()
             })
-        case .location:
-            presenter.requestWeatherLocation(lat: fieldLocationLat.text ?? "",
-                                             lon: fieldLocationLon.text ?? "",
-                                             completionHandler: { [weak self] data in
-                                                self?.addNewItem(data)
-            }, onError: { [weak self] in
-                self?.showAlertError()
-            })
+        default:
+            requestWeatherLocation(fieldLocationLat.text ?? "", lon: fieldLocationLon.text ?? "")
         }
     }
     
@@ -124,6 +127,31 @@ extension OpenWeatherViewController {
         let alert = UIAlertController(title: "Datos no encontrados", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true)
+    }
+    
+    func getCurrentLocation() {
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestLocation()
+        }
+    }
+    
+    func requestWeatherLocation(_ lat: String, lon: String) {
+        presenter.requestWeatherLocation(lat: lat,
+                                         lon: lon,
+                                         completionHandler: { [weak self] data in
+            self?.addNewItem(data)
+        }, onError: { [weak self] in
+            self?.showAlertError()
+        })
+    }
+    
+    func resetFields() {
+        fieldLocationLon.text = ""
+        fieldLocationLat.text = ""
+        fieldCity.text = ""
     }
 }
 
@@ -170,5 +198,19 @@ extension OpenWeatherViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize.zero
+    }
+}
+
+extension OpenWeatherViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            fieldLocationLat.text = "\(location.coordinate.latitude)"
+            fieldLocationLon.text = "\(location.coordinate.longitude)"
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error \(error)")
     }
 }
