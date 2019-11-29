@@ -34,6 +34,7 @@ Module to Test in Peiky!
     s.subspec "Core" do |ss|
         ss.source_files = 'OpenWeatherPeiky/Source/**/*'
         ss.dependency 'Alamofire'
+        ss.dependency 'Nuke'
     end
 
     s.resource_bundles      = { 

@@ -8,8 +8,7 @@
 import OpenWeatherPeiky
 
 class AppConfiguration: NSObject {
-    static let shared = AppConfiguration()
-    func setup(_ baseController: UIViewController) {
+    static func setup(_ baseController: UIViewController) {
         OpenWeatherModule(with: baseController).showOpenWeather()
     }
 }

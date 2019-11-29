@@ -6,7 +6,7 @@
 //
 
 public class OpenWeatherModule {
-    var presenter: OpenWeatherPresenterProtocol
+    private let presenter: OpenWeatherPresenterProtocol
 
     public init(with baseController: UIViewController?) {
         let interactor = OpenWeatherInteractor()

@@ -22,6 +22,6 @@ class PeikyTestCoordinatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppConfiguration.shared.setup(self)
+        AppConfiguration.setup(self)
     }
 }

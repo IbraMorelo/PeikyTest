@@ -10,6 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpenWeatherViewController" customModule="OpenWeatherPeikyResources">
             <connections>
+                <outlet property="collectionView" destination="xaX-g3-Mck" id="MrY-Ym-LTM"/>
+                <outlet property="fieldCity" destination="5mt-R4-21w" id="TVR-AI-sIS"/>
+                <outlet property="fieldLocationLat" destination="43B-fa-RWd" id="pJ2-ab-yWQ"/>
+                <outlet property="fieldLocationLon" destination="mUc-dy-TXR" id="9Po-n7-MAb"/>
+                <outlet property="searchBtn" destination="lFq-fQ-819" id="6se-iS-1d0"/>
+                <outlet property="stackviewLocation" destination="ONh-Ss-pEN" id="9tS-vr-amG"/>
+                <outlet property="typeOfSearchControl" destination="x0z-gq-3fF" id="2yf-Ue-j16"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5BC-Vr-Dns"/>
             </connections>
         </placeholder>
@@ -17,7 +24,94 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x0z-gq-3fF">
+                    <rect key="frame" x="10" y="84" width="394" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="ndT-ex-o56"/>
+                    </constraints>
+                    <segments>
+                        <segment title="First"/>
+                        <segment title="Second"/>
+                    </segments>
+                    <connections>
+                        <action selector="typeOfSearchChanged:" destination="-1" eventType="valueChanged" id="PAj-RV-1QX"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmN-jX-IMC">
+                    <rect key="frame" x="10" y="135" width="394" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5mt-R4-21w">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ONh-Ss-pEN">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="43B-fa-RWd">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-dy-TXR">
+                                    <rect key="frame" x="202" y="0.0" width="192" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="5mt-R4-21w" firstAttribute="top" secondItem="FmN-jX-IMC" secondAttribute="top" id="3XD-Sp-yEk"/>
+                        <constraint firstAttribute="trailing" secondItem="ONh-Ss-pEN" secondAttribute="trailing" id="CeQ-Nn-52x"/>
+                        <constraint firstAttribute="bottom" secondItem="ONh-Ss-pEN" secondAttribute="bottom" id="Dlh-cS-vBj"/>
+                        <constraint firstItem="ONh-Ss-pEN" firstAttribute="top" secondItem="FmN-jX-IMC" secondAttribute="top" id="K82-Y6-0Qj"/>
+                        <constraint firstAttribute="bottom" secondItem="5mt-R4-21w" secondAttribute="bottom" id="Ln7-4t-ZCR"/>
+                        <constraint firstItem="5mt-R4-21w" firstAttribute="leading" secondItem="FmN-jX-IMC" secondAttribute="leading" id="Nkj-wy-jYj"/>
+                        <constraint firstAttribute="trailing" secondItem="5mt-R4-21w" secondAttribute="trailing" id="P1l-mX-JZ8"/>
+                        <constraint firstAttribute="height" constant="50" id="SIR-aT-NF8"/>
+                        <constraint firstItem="ONh-Ss-pEN" firstAttribute="leading" secondItem="FmN-jX-IMC" secondAttribute="leading" id="vFD-or-dZ5"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-fQ-819">
+                    <rect key="frame" x="10" y="205" width="394" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="VvC-oa-hxK"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="searchBtnTapped:" destination="-1" eventType="touchUpInside" id="vLz-zR-b2P"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xaX-g3-Mck">
+                    <rect key="frame" x="10" y="275" width="394" height="567"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1zi-kL-yy8">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xaX-g3-Mck" firstAttribute="top" secondItem="lFq-fQ-819" secondAttribute="bottom" constant="20" id="3Lf-qx-S72"/>
+                <constraint firstItem="x0z-gq-3fF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="4wp-P0-YgQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FmN-jX-IMC" secondAttribute="trailing" constant="10" id="EHS-3V-RzZ"/>
+                <constraint firstItem="xaX-g3-Mck" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="I6M-dC-TfV"/>
+                <constraint firstItem="FmN-jX-IMC" firstAttribute="top" secondItem="x0z-gq-3fF" secondAttribute="bottom" constant="20" id="MKg-rS-MhM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xaX-g3-Mck" secondAttribute="bottom" constant="20" id="Qq6-IW-Rqt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lFq-fQ-819" secondAttribute="trailing" constant="10" id="VwT-sL-UeZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="x0z-gq-3fF" secondAttribute="trailing" constant="10" id="W6S-Xn-iyI"/>
+                <constraint firstItem="lFq-fQ-819" firstAttribute="top" secondItem="FmN-jX-IMC" secondAttribute="bottom" constant="20" id="dwz-Rg-5mf"/>
+                <constraint firstItem="x0z-gq-3fF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="lxf-EW-hp9"/>
+                <constraint firstItem="lFq-fQ-819" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="nEH-yf-npj"/>
+                <constraint firstItem="FmN-jX-IMC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="uIU-0u-cBK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xaX-g3-Mck" secondAttribute="trailing" constant="10" id="yEO-sH-UGe"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="142"/>
         </view>

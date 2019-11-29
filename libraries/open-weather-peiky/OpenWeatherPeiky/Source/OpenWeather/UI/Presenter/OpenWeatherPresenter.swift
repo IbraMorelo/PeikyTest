@@ -21,10 +21,28 @@ final class OpenWeatherPresenter {
 
 extension OpenWeatherPresenter: OpenWeatherPresenterProtocol {
     func didLoad() {
-        
+//        interactor.requestWeather()
     }
     
     func showOpenWeather() {
         wireframe.showOpenWeather(with: self)
+    }
+    
+    func requestWeatherCity(name: String,
+                            completionHandler: @escaping (_ openWeatherDetail: OpenWeatherDetail) -> Void,
+                            onError: @escaping () -> Void) {
+        interactor.requestWeatherCity(name: name,
+                                      completionHandler: completionHandler,
+                                      onError: onError)
+    }
+    
+    func requestWeatherLocation(lat: String,
+                                lon: String,
+                                completionHandler: @escaping (_ openWeatherDetail: OpenWeatherDetail) -> Void,
+                                onError: @escaping () -> Void) {
+        interactor.requestWeatherLocation(lat: lat,
+                                          lon: lon,
+                                          completionHandler: completionHandler,
+                                          onError: onError)
     }
 }

@@ -32,3 +32,28 @@ extension Bundle {
         return path(forResource: xib, ofType: "nib") != nil
     }
 }
+
+public protocol BundleHelper {
+    static var defaultName: String { get }
+}
+
+public extension BundleHelper  where Self: NSObject {
+    static var mainBundle: Bundle {
+        return bundleFor(root: self, name: defaultName) ?? Bundle(path: "\(defaultName).bundle") ?? Bundle(for: self)
+    }
+}
+
+final class OpenWeatherPeikyBundleHelper: NSObject, BundleHelper {
+    public static var defaultName: String {
+        return "OpenWeatherPeikyResources"
+    }
+    
+    public override init() {}
+}
+
+extension Bundle {
+    static var openWeatherPeikyBundle: Bundle {
+        return OpenWeatherPeikyBundleHelper.mainBundle
+    }
+}
+
